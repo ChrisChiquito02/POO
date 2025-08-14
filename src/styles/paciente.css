@@ -1,0 +1,42 @@
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);
+}
+
+/* === Tabla === */
+.table-view {
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+}
+
+/* === Columnas de la tabla === */
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* === Botones === */
+.button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-padding: 6px 12px;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* === TextFields y ComboBoxes === */
+.text-field, .combo-box {
+    -fx-padding: 5px;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-border-color: #ccc;
+}
+
+/* === Layouts === */
+.hbox, .vbox {
+    -fx-spacing: 10px;
+}

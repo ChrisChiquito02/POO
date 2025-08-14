@@ -1,0 +1,83 @@
+/* neo.css — Modern clean theme */
+.root {
+    -fx-font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);
+    -fx-text-fill: #e5e7eb;
+}
+
+.label {
+    -fx-text-fill: #e5e7eb;
+}
+
+.text-field, .combo-box, .date-picker, .password-field, .text-area {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-text-fill: #e5e7eb;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-padding: 10 12 10 12;
+}
+
+.button {
+    -fx-background-radius: 12;
+    -fx-padding: 10 16;
+    -fx-font-weight: 600;
+    -fx-background-color: #22d3ee;
+    -fx-text-fill: #0f172a;
+}
+.button:hover {
+    -fx-background-color: #06b6d4;
+}
+.button:disabled {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-text-fill: rgba(255,255,255,0.5);
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-base: rgba(255,255,255,0.05);
+    -fx-control-inner-background: rgba(255,255,255,0.05);
+    -fx-background-insets: 0;
+    -fx-padding: 8;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-radius: 12;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 12 12 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 36px;
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(255,255,255,0.04);
+}
+.table-row-cell:selected {
+    -fx-background-color: #22d3ee;
+    -fx-text-fill: #0f172a;
+}
+
+.topbar {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-padding: 12;
+    -fx-background-radius: 12;
+}
+
+.footerbar {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-padding: 10;
+    -fx-background-radius: 12;
+}
+
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+}
+
+.accent {
+    -fx-text-fill: #22d3ee;
+}

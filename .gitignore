@@ -1,0 +1,13 @@
+# Ignorar todo lo que esté en la carpeta lib/
+lib/
+
+# (Opcional) Ignorar archivos temporales y configuraciones de VS Code
+.vscode/
+*.class
+*.log
+*.tmp
+*.swp
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
