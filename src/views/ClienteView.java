@@ -135,7 +135,7 @@ root.getStyleClass().add("root");
 
         Scene scene = new Scene(root, 1000, 680);
 scene.getStylesheets().clear();
-scene.getStylesheets().add(App.class.getResource("/styles/neo.css").toExternalForm());
+scene.getStylesheets().add(ClienteView.class.getResource("/styles/neo.css").toExternalForm());
         stage.setTitle("Clientes");
         stage.setScene(scene);
         stage.show();

@@ -1,7 +1,7 @@
-IF DB_ID('delicias') IS NULL
-    CREATE DATABASE delicias;
+IF DB_ID('restaurant') IS NULL
+    CREATE DATABASE restaurant;
 GO
-USE delicias;
+USE restaurant;
 GO
 
 CREATE TABLE clientes (
@@ -47,11 +47,11 @@ GO
 -- 1) Clientes (5 registros)
 ------------------------------
 INSERT INTO clientes (nombre, correo) VALUES
-('Ana Pérez',   'ana@delicias.test'),
-('Luis García', 'luis@delicias.test'),
-('María López', 'maria@delicias.test'),
-('Carlos Ruiz', 'carlos@delicias.test'),
-('Sofía Torres','sofia@delicias.test');
+('Chris Martinez',   'chris@delicias.test'),
+('Megan Lopez', 'megan@delicias.test'),
+('Juan Hernandez', 'juan@delicias.test'),
+('Pepe Garza', 'pepe@delicias.test'),
+('Hector Badillo','hector@delicias.test');
 GO
 
 ------------------------------
@@ -68,11 +68,11 @@ GO
 ------------------------------------
 -- 3) Pedidos + Detalles (5 pedidos)
 ------------------------------------
-DECLARE @c1 BIGINT = (SELECT id FROM clientes WHERE correo='ana@delicias.test');
-DECLARE @c2 BIGINT = (SELECT id FROM clientes WHERE correo='luis@delicias.test');
-DECLARE @c3 BIGINT = (SELECT id FROM clientes WHERE correo='maria@delicias.test');
-DECLARE @c4 BIGINT = (SELECT id FROM clientes WHERE correo='carlos@delicias.test');
-DECLARE @c5 BIGINT = (SELECT id FROM clientes WHERE correo='sofia@delicias.test');
+DECLARE @c1 BIGINT = (SELECT id FROM clientes WHERE correo='chris@delicias.test');
+DECLARE @c2 BIGINT = (SELECT id FROM clientes WHERE correo='megan@delicias.test');
+DECLARE @c3 BIGINT = (SELECT id FROM clientes WHERE correo='juan@delicias.test');
+DECLARE @c4 BIGINT = (SELECT id FROM clientes WHERE correo='pepe@delicias.test');
+DECLARE @c5 BIGINT = (SELECT id FROM clientes WHERE correo='hector@delicias.test');
 
 DECLARE @p_enchiladas BIGINT = (SELECT id FROM platillos WHERE nombre='Enchiladas Verdes');
 DECLARE @p_pastor     BIGINT = (SELECT id FROM platillos WHERE nombre='Tacos al Pastor');

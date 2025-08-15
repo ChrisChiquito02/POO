@@ -144,7 +144,7 @@ root.getStyleClass().add("root");
         {
                 Scene scene = new Scene(root, 1000, 680);
                 scene.getStylesheets().clear();
-                scene.getStylesheets().add(App.class.getResource("/styles/neo.css").toExternalForm());
+                scene.getStylesheets().add(PlatilloView.class.getResource("/styles/neo.css").toExternalForm());
                 stage.setScene(scene);
            }
         stage.show();

@@ -2,16 +2,16 @@
 .root {
     -fx-font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
     -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);
-    -fx-text-fill: #e5e7eb;
+    -fx-text-fill: #ffffff;
 }
 
 .label {
-    -fx-text-fill: #e5e7eb;
+    -fx-text-fill: #ffffff;
 }
 
 .text-field, .combo-box, .date-picker, .password-field, .text-area {
     -fx-background-color: rgba(255,255,255,0.08);
-    -fx-text-fill: #e5e7eb;
+    -fx-text-fill: #ffffff;
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-border-color: rgba(255,255,255,0.12);
@@ -23,34 +23,72 @@
     -fx-padding: 10 16;
     -fx-font-weight: 600;
     -fx-background-color: #22d3ee;
-    -fx-text-fill: #0f172a;
+    -fx-text-fill: #ffffff;
 }
 .button:hover {
     -fx-background-color: #06b6d4;
 }
 .button:disabled {
     -fx-background-color: rgba(255,255,255,0.12);
-    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-text-fill: #ffffff;
 }
 
+/* Bordes visibles en las tablas */
 .table-view {
-    -fx-background-color: transparent;
-    -fx-base: rgba(255,255,255,0.05);
-    -fx-control-inner-background: rgba(255,255,255,0.05);
+    -fx-background-color: #b5eaf2; /* fondo general */
     -fx-background-insets: 0;
     -fx-padding: 8;
-    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-color: rgb(150, 200, 205); /* borde externo */
     -fx-border-radius: 12;
 }
 
-.table-view .column-header-background {
-    -fx-background-color: rgba(255,255,255,0.10);
-    -fx-background-radius: 12 12 0 0;
+/* Filas pares */
+.table-row-cell:even {
+    -fx-background-color: #b5eaf2;
+    -fx-border-color: rgb(200, 230, 235); /* borde entre filas */
+    -fx-border-width: 0 0 1 0; /* solo borde inferior */
 }
+
+/* Filas impares */
+.table-row-cell:odd {
+    -fx-background-color: #b7f2d4;
+    -fx-border-color: rgb(200, 230, 235); /* borde entre filas */
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Bordes verticales de las columnas */
+.table-cell {
+    -fx-border-color: rgb(200, 230, 235);
+    -fx-border-width: 0 1 0 0; /* solo borde derecho */
+    -fx-background-color: transparent;
+    -fx-text-fill: #0f172a;
+}
+
+/* Selección */
+.table-row-cell:selected {
+    -fx-background-color: #22d3ee;
+}
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #0f172a;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #0f172a;
+}
+
+
+/* Encabezados de columnas con texto negro */
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-text-fill: #0f172a; /* negro azulado */
+    -fx-font-weight: bold;
+}
+
 
 .table-view .column-header, .table-view .filler {
     -fx-size: 36px;
     -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
 }
 
 .table-row-cell:odd {
@@ -58,26 +96,40 @@
 }
 .table-row-cell:selected {
     -fx-background-color: #22d3ee;
-    -fx-text-fill: #0f172a;
+    -fx-text-fill: #ffffff;
 }
 
 .topbar {
     -fx-background-color: rgba(255,255,255,0.06);
     -fx-padding: 12;
     -fx-background-radius: 12;
+    -fx-text-fill: #ffffff;
 }
 
 .footerbar {
     -fx-background-color: rgba(255,255,255,0.06);
     -fx-padding: 10;
     -fx-background-radius: 12;
+    -fx-text-fill: #ffffff;
 }
 
 .title {
     -fx-font-size: 22px;
     -fx-font-weight: 700;
+    -fx-text-fill: #ffffff;
 }
 
 .accent {
-    -fx-text-fill: #22d3ee;
+    -fx-text-fill: #ffffff;
 }
+
+/* Texto legible para TODAS las celdas de todas las tablas */
+.table-view .table-row-cell .table-cell {
+    -fx-text-fill: black; /* gris claro legible */
+}
+
+/* Texto al seleccionar (contraste sobre celeste) */
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #0f172a; /* oscuro para contraste */
+}
+

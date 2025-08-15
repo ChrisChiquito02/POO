@@ -5,7 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class JPAUtil {
-    private static final String PU_NAME = "DeliciasPU";
+    private static final String PU_NAME = "restaurantPU";
     private static EntityManagerFactory emf;
 
     /** Llamar al inicio (p.ej., en App.start) */

@@ -19,6 +19,9 @@ import models.Cliente;
 import models.Pedido;
 import models.PedidoDetalle;
 import models.Platillo;
+import javafx.scene.control.ListCell;
+import javafx.util.StringConverter;
+
 
 public class PedidoForm {
 
@@ -35,8 +38,71 @@ public class PedidoForm {
         ComboBox<Cliente> cmbCliente = new ComboBox<>();
         cmbCliente.getItems().setAll(clienteController.obtenerTodos());
 
+
+        //mostrar nombre del cliente y correo
+        cmbCliente.setCellFactory(cb -> new ListCell<Cliente>() {
+            @Override
+            protected void updateItem(Cliente item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? "" : item.getNombre() + " — " + item.getCorreo());
+            }
+        });
+        cmbCliente.setButtonCell(new ListCell<Cliente>() {
+            @Override
+            protected void updateItem(Cliente item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? "" : item.getNombre());
+            }
+        });
+        cmbCliente.setConverter(new StringConverter<Cliente>() {
+            @Override
+            public String toString(Cliente c) {
+                return c == null ? "" : c.getNombre();
+            }
+            @Override
+            public Cliente fromString(String s) {
+                if (s == null) return null;
+                return cmbCliente.getItems().stream().filter(c -> s.equals(c.getNombre())).findFirst().orElse(null);
+            }
+        });
+
+
         ComboBox<Platillo> cmbPlatillo = new ComboBox<>();
         cmbPlatillo.getItems().setAll(platilloController.obtenerTodos());
+
+
+        // mostrar nombre del platillo y precio
+        cmbPlatillo.setCellFactory(cb -> new ListCell<Platillo>() {
+            @Override
+            protected void updateItem(Platillo item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText("");
+                } else {
+                    String precio = String.format("$%.2f", item.getPrecio());
+                    setText(item.getNombre() + " — " + precio);
+                }
+            }
+        });
+        cmbPlatillo.setButtonCell(new ListCell<Platillo>() {
+            @Override
+            protected void updateItem(Platillo item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? "" : item.getNombre());
+            }
+        });
+        cmbPlatillo.setConverter(new StringConverter<Platillo>() {
+            @Override
+            public String toString(Platillo p) {
+                return p == null ? "" : p.getNombre();
+            }
+            @Override
+            public Platillo fromString(String s) {
+                if (s == null) return null;
+                return cmbPlatillo.getItems().stream().filter(p -> s.equals(p.getNombre())).findFirst().orElse(null);
+            }
+        });
+
         TextField txtCantidad = new TextField();
         txtCantidad.setPromptText("Cantidad");
         Button btnAgregarDetalle = new Button("Agregar platillo");
@@ -131,7 +197,7 @@ root.getStyleClass().add("root");
         {
                 Scene scene = new Scene(root, 1000, 680);
                 scene.getStylesheets().clear();
-                scene.getStylesheets().add(App.class.getResource("/styles/neo.css").toExternalForm());
+                scene.getStylesheets().add(PedidoForm.class.getResource("/styles/neo.css").toExternalForm());
                 stage.setScene(scene);
            }
         stage.showAndWait();

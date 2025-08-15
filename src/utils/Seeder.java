@@ -20,17 +20,22 @@ public class Seeder {
             Long countClientes = em.createQuery("select count(c) from Cliente c", Long.class).getSingleResult();
             if (countClientes == 0) {
                 // Clients
-                Cliente c1 = new Cliente(null, "Ariadna Sol", "ari.sol@correo.com");
-                Cliente c2 = new Cliente(null, "Matías Quintero", "mat.q@correo.com");
-                Cliente c3 = new Cliente(null, "Luna Zaragoza", "luna.z@correo.com");
+                // ...existing code...
+
+                // Clients
+                Cliente c1 = new Cliente("Ariadna Sol", "ari.sol@correo.com");
+                Cliente c2 = new Cliente("Matías Quintero", "mat.q@correo.com");
+                Cliente c3 = new Cliente("Luna Zaragoza", "luna.z@correo.com");
                 em.persist(c1); em.persist(c2); em.persist(c3);
 
                 // Platillos (totally new)
-                Platillo p1 = new Platillo(null, "Ramen de miso", 129.50);
-                Platillo p2 = new Platillo(null, "Tacos de portobello", 89.00);
-                Platillo p3 = new Platillo(null, "Ensalada mediterránea", 102.75);
-                Platillo p4 = new Platillo(null, "Panini de pesto", 95.20);
+                Platillo p1 = new Platillo("Ramen de miso", 129.50);
+                Platillo p2 = new Platillo("Tacos de portobello", 89.00);
+                Platillo p3 = new Platillo("Ensalada mediterránea", 102.75);
+                Platillo p4 = new Platillo("Panini de pesto", 95.20);
                 em.persist(p1); em.persist(p2); em.persist(p3); em.persist(p4);
+
+                // ...existing code...
 
                 // One order
                 Pedido ped = new Pedido();
